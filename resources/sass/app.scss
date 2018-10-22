@@ -1,5 +1,9 @@
 
 // Fonts
+
+
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:400,700');
+
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
 // Variables
@@ -7,6 +11,9 @@
 
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
+
+// _Custom
+@import '_custom';
 
 .navbar-laravel {
   background-color: #fff;
