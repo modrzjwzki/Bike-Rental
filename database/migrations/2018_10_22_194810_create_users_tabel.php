@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBikeTable extends Migration
+class CreateUsersTabel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateBikeTable extends Migration
      */
     public function up()
     {
-        Schema::create('bike', function (Blueprint $table) {
+        Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
             $table->string('name');
-            $table->string('description');
-            $table->string('DriveTrain');
-            $table->string('Brakes');
-            $table->string('Crank');
-            $table->string('Wheelset');
-            $table->string('Extras');
-            $table->string('imageLink');
+            $table->string('surname');
+            $table->string('email')->unique();
+            $table->timestamp('email_verified_at')->nullable();
+            $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 

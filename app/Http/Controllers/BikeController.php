@@ -47,11 +47,28 @@ class BikeController extends Controller
     public function show($id)
     {
 
+        $query = DB::table('bike')->where('id', ''.$id.'')->exists();
         $bike = DB::table('bike')->where('id', ''.$id.'')->first();
+        
+        if ($query == true) {
+            return view('Pages.bike', [
+                'name' => $bike->name,
+                'description' => $bike->description,
+                'DriveTrain' => $bike->DriveTrain,
+                'Brakes' => $bike->Brakes,
+                'Crank' => $bike->Crank,
+                'Wheelset' => $bike->Wheelset,
+                'imageLink' => $bike->imageLink,
+            ]);
+        }
+        /*
 
-        echo $bike->name;
-        echo $bike->Crank;
-        echo $id;
+        if(is_null($bike)){
+           
+        }
+        */
+        
+        
     }
 
     /**

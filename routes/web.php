@@ -13,5 +13,5 @@
 
 Route::resource('/', 'PagesController');
 
-Route::get('bike/{id}', 'BikeController@show');
+Route::get('bike/{id?}', 'BikeController@show');
 Route::redirect('/bike', '/');

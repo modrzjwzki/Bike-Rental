@@ -14,6 +14,7 @@ class bikeTableSeeder extends Seeder
     {
         $bike = new Bike();
         $bike->name = 'cannondale';
+        $bike->description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ex velit, convallis eget metus vitae, tincidunt maximus turpis. ";
         $bike->DriveTrain = 'DriveTrain';
         $bike->Brakes = 'Brakes';
         $bike->Crank = 'Crank';
