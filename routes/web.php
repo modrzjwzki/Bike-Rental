@@ -14,4 +14,16 @@
 Route::resource('/', 'PagesController');
 
 Route::get('bike/{id?}', 'BikeController@show');
+
+//Route::post('bike/1', 'RentBikeController@store');
+
 Route::redirect('/bike', '/');
+//Route::
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::any('rented', 'RentBikeController@index');
+
+Route::resource('bikes', 'BikeController');

@@ -7,4 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Bike extends Model
 {
     protected $table = "bike";
+
+    protected $timestamps = true;
 }

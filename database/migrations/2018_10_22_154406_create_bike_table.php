@@ -24,6 +24,7 @@ class CreateBikeTable extends Migration
             $table->string('Wheelset');
             $table->string('Extras');
             $table->string('imageLink');
+            $table->integer('availability');
         });
     }
 

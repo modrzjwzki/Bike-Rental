@@ -21,6 +21,7 @@ class bikeTableSeeder extends Seeder
         $bike->Wheelset = 'Wheelset';
         $bike->imageLink = 'imageLink';
         $bike->extras = 'extras'; 
+        $bike->availability = '3'; 
         $bike->save();
 
     }

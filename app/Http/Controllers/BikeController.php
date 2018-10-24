@@ -35,7 +35,40 @@ class BikeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $availability = DB::table('bike')->where('id', ''.$request->input('Bike_id').'')->first();
+        if ($availability->availability > 0){
+            $request->validate([
+                'Bike_Name' => 'required',
+                'Bike_id' => 'required',
+                'WhoRented' => 'required',
+                'publish_at' => 'nullable|date'
+            ]);
+
+            
+            $bikeRented = DB::table('rented_bikes')->insert(
+                [
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s'),
+                    'whoRented' => $request->input('WhoRented'),
+                    'whatBike' => $request->input('Bike_id'),
+                    'whenRented' => date('Y-m-d'),
+                    'bikeName' => $request->input('Bike_Name'),
+                    'status' => 'dostępny',
+                    'whenEnd' => date('Y-m-d', strtotime('+7 days'))
+                ]
+            );
+    
+            $bike = DB::table('bike')->where('id', ''.$request->input('Bike_id').'')->first();
+            
+            DB::table('bike')
+                ->where('id', $request->input('Bike_id'))
+                ->update(['availability' => $bike->availability -1]);
+
+            return view('Pages.rent');
+        } else {
+            return 'Rower niedostępny';
+        }
+       
     }
 
     /**
@@ -52,6 +85,7 @@ class BikeController extends Controller
         
         if ($query == true) {
             return view('Pages.bike', [
+                'id' => $bike->id,
                 'name' => $bike->name,
                 'description' => $bike->description,
                 'DriveTrain' => $bike->DriveTrain,
@@ -59,6 +93,7 @@ class BikeController extends Controller
                 'Crank' => $bike->Crank,
                 'Wheelset' => $bike->Wheelset,
                 'imageLink' => $bike->imageLink,
+                'availability' => $bike->availability,
             ]);
         }
         /*
@@ -70,6 +105,8 @@ class BikeController extends Controller
         
         
     }
+
+    
 
     /**
      * Show the form for editing the specified resource.

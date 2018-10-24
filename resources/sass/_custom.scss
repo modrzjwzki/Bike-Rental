@@ -1,2 +1,171 @@
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
 
+body {
+    background-color: #fff;
+}
 
+.navbar-laravel {
+    height: 70px;
+    border-bottom: 1px solid #a3a3a3;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.index-container {
+    max-width: 1300px;
+}
+
+.image-index {
+    padding: 0;
+    height: 400px;
+   
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: -200px;
+    h1 {
+        color: #fff;
+        padding-top: 150px;
+        text-align: center;
+        padding-right: 100px;
+       
+        
+    }
+}
+
+.bike {
+    max-width: 1024px;
+    margin-top:40px;
+    
+    .bike-name {
+        border-bottom:1px solid #2abd38;
+        margin-bottom: 30px;
+        font-size:28px;
+        padding-bottom: 10px;
+      
+    }
+
+    .submit {
+        border: none;
+        display: block;
+        width: 230px;
+        text-align: center;
+        height: 50px;
+        background-color: #2abd38;
+        font-weight: bold;
+        color:#fff;
+        letter-spacing: 5px;
+    }
+
+    .bike-availability {
+        width: 230px;
+        height: 50px;
+        border:1px solid #6c6c6c;
+        margin-top: 20px;
+        text-align: center;
+        line-height: 50px;
+        font-weight: bold;
+    }
+
+    .pull-right {
+       
+    }
+    .bike-des {
+        margin-top: 50px;
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .bike-description {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .bike-DriveTrain {
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .spec-img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .spec-name {
+        text-align: center;
+        font-weight: bold;
+    }
+
+    .secification {
+        div {
+            text-align: center;
+        }
+    }
+}
+
+footer {
+    margin-top:100px;
+    background-color: #000;
+    color:#fff;
+    padding-bottom: 50px;
+    padding-top: 50px;
+   
+}
+
+.grid-container {
+  /* Grid Fallback */
+  grid-template-columns: repeat(auto-fill, 500px);
+  display: grid;
+  justify-content: space-evenly;
+}
+
+.bike-card {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    max-width: 500px;
+    padding: 20px;
+    
+    height: 350px;
+    
+    display: block;
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .bike-card-view {
+        display: block;
+        max-width: 100px;
+        color:#fff;
+        background-color: #000;
+        text-align: center;
+        margin-left: auto;
+        
+        margin-right: auto;
+    }
+
+    .bike-card-name {
+        text-align:center;
+        margin-top: 20px;
+    }
+}
+
+.Bike-rented {
+    max-width: 500px;
+    height: 100px;
+    border: 1px solid #000;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 100px;
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
