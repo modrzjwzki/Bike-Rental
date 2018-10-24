@@ -3,8 +3,8 @@
 @section('content') 
 </div>
 <div class="image-index" style="background-image:url({{url('/assets/stock2.jpg')}});">
-    <h1>Chyba Najlepsza wypożyczalnia rowerów<br />
-    tak mi się wydaje.</h1>
+    <h1>Najlepsza wypożyczalnia rowerów<br />
+    Jaką udało mi się napisać teraz chyba.</h1>
 </div>
 
 <div class="container-fluid " >

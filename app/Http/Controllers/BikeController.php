@@ -44,7 +44,6 @@ class BikeController extends Controller
                 'publish_at' => 'nullable|date'
             ]);
 
-            
             $bikeRented = DB::table('rented_bikes')->insert(
                 [
                     'created_at' => date('Y-m-d H:i:s'),
@@ -53,10 +52,11 @@ class BikeController extends Controller
                     'whatBike' => $request->input('Bike_id'),
                     'whenRented' => date('Y-m-d'),
                     'bikeName' => $request->input('Bike_Name'),
-                    'status' => 'dostępny',
+                    'STATUS' => '1',
                     'whenEnd' => date('Y-m-d', strtotime('+7 days'))
                 ]
             );
+            
     
             $bike = DB::table('bike')->where('id', ''.$request->input('Bike_id').'')->first();
             

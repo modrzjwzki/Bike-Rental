@@ -1,7 +1,7 @@
 <!doctype HTML>
 <html lang="{{ app()->getLocale() }}">
     <head>
-    <title>Chuj</title>
+    <title>@yield('title', 'Bike Rental')</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -79,6 +79,7 @@
                     <div class="location">ul. Morska 43<br/><b>Gdynia, Polska</b></div>
                     <div class="PhoneNumber"><b>+48 882 050 601</b></div>
                     <div class="email"><b>kubam1414@hotmail.com</b></div>
+                    <div class="email"><b><a target="_blank" href="https://github.com/kubamod/Bike-Rental">Github</a></b></div>
                 </div>
                 <div class="col-md">
                     <div class="about-footer">
@@ -92,11 +93,7 @@
         <script>
             
            
-            $("#bike-image").elevateZoom({
-  zoomType				: "lens",
-  lensShape : "round",
-  lensSize    : 200
-});
+            $("#bike-image").elevateZoom();
             </script>
     </body>
 </html>

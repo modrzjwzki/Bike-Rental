@@ -10492,6 +10492,7 @@ body {
 .image-index {
   padding: 0;
   height: 400px;
+  margin-bottom: 80px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: -200px;
@@ -10509,6 +10510,10 @@ body {
   margin-top: 40px;
 }
 
+.bike .bike-image {
+  margin-bottom: 50px;
+}
+
 .bike .bike-name {
   border-bottom: 1px solid #2abd38;
   margin-bottom: 30px;
@@ -10519,17 +10524,18 @@ body {
 .bike .submit {
   border: none;
   display: block;
-  width: 230px;
+  width: 100%;
+  outline: none;
   text-align: center;
   height: 50px;
   background-color: #2abd38;
   font-weight: bold;
   color: #fff;
   letter-spacing: 5px;
+  cursor: pointer;
 }
 
 .bike .bike-availability {
-  width: 230px;
   height: 50px;
   border: 1px solid #6c6c6c;
   margin-top: 20px;
@@ -10582,7 +10588,7 @@ footer {
 
 .grid-container {
   /* Grid Fallback */
-  grid-template-columns: repeat(auto-fill, 500px);
+  grid-template-columns: repeat(auto-fill, minmax(0, 500px));
   display: grid;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -10593,7 +10599,6 @@ footer {
   margin-top: 20px;
   margin-bottom: 20px;
   max-width: 500px;
-  padding: 20px;
   height: 350px;
   display: block;
 }
@@ -10628,6 +10633,116 @@ footer {
   line-height: 100px;
   margin-top: 200px;
   margin-bottom: 100px;
+}
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  left: 0;
+  top: 0;
+  max-width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  max-width: 500px;
+  /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+
+.close {
+  max-width: 100px;
+  height: 40px;
+  background-color: #aaaaaa;
+  font-size: 15px;
+  float: right;
+  display: block;
+  opacity: 1 !important;
+  border: 1px solid #a4a4a4;
+  margin: 5px;
+  width: 100px;
+  border-radius: 2px;
+  color: #fff;
+  text-shadow: none !important;
+}
+
+.rent {
+  float: right;
+  width: 100px;
+  height: 40px;
+  display: block;
+  background-color: #2abd38;
+  border: none;
+  color: #fff;
+  border-radius: 2px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.terms {
+  text-transform: uppercase;
+}
+
+.terms-content {
+  overflow: auto;
+  height: 200px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.admin-form {
+  padding-top: 20px;
+}
+
+.admin-form .admin-inputs {
+  float: left;
+  max-width: 300px;
+}
+
+.admin-form input[type="text"] {
+  display: block;
+  height: 40px;
+  max-width: 200px;
+  margin: 5px;
+  border-radius: 4px;
+  border: solid 1px #6c6c6c;
+  padding-left: 20px;
+}
+
+.admin-form textarea {
+  max-width: 600px;
+  display: block;
+  height: 310px;
+  border-radius: 2px;
+  border: 1px solid #2abd38;
+  margin: 5px;
 }
 
 .navbar-laravel {

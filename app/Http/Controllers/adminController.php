@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use App\Http\Requests;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
-
-class RentBikeController extends Controller
+class adminController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,25 +16,30 @@ class RentBikeController extends Controller
      */
     public function index()
     {
-        
-    
 
-        $rentedBikes = DB::table('rented_bikes')->where('whoRented', ''.auth::user()->id.'')->get();
-        
-        //$whatBike = $rentedBikes->whatBike;
-        //return $rentedBikes;
-        //$bikes = DB::table('bike')->where('id', '1' )->get();
-
-        
-
-        
-
-      
-        
-        
-        return view('Pages.rented',['rentedBikes' => $rentedBikes]);
+        if (auth::user()->name == "admin") {
+            $bike = DB::table('bike')->get();
+            $rentedBikes = DB::table('rented_bikes')->get();
+            
+            return view('pages.adminPanel', 
+            ['bikes' => $bike,
+            'rentedBikes' => $rentedBikes
+            ]);
+        } else {
+            return redirect('/');
+        }
+       
+       
         
     }
+
+    public function status($id, $status){
+        if (auth::user()->name == "admin") {
+            DB::table('rented_bikes')->where('id', $id)->update(['STATUS' => $status]);
+            return redirect('admin');
+        }
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -54,9 +58,27 @@ class RentBikeController extends Controller
      */
     public function store(Request $request)
     {
-        
+
+        $bikeRented = DB::table('bike')->insert(
+            [
+                'created_at' => date('Y-m-d H:i:s'),
+                'updated_at' => date('Y-m-d H:i:s'),
+                'name' => $request->input('Name'),
+                'description' => $request->input('description'),
+                'DriveTrain' => $request->input('DriveTrain'),
+                'Wheelset' => $request->input('Wheelset'),
+                'Brakes' => $request->input('Brakes'),
+                'Crank' => $request->input('Crank'),
+                'imageLink' => $request->input('imageLink'),
+                'availability' => $request->input('availability'),
+                'Extras' => '',
+
+            ]
+        );
         
     }
+
+   
 
     /**
      * Display the specified resource.
@@ -66,7 +88,8 @@ class RentBikeController extends Controller
      */
     public function show($id)
     {
-        //
+        DB::table('bike')->where('id', $id)->delete();
+        return redirect('admin');
     }
 
     /**
@@ -100,6 +123,6 @@ class RentBikeController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
     }
 }
