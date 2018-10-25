@@ -27,15 +27,20 @@ body {
     margin-bottom: 80px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-position-y: -200px;
-    h1 {
+    background-position-y: -50px;
+    
+    div {
         color: #fff;
-        padding-top: 150px;
+       font-size: 30px;
         text-align: center;
-        padding-right: 100px;
-       
+        background-color: none !important;
+        margin-top: 90px;
         
     }
+}
+
+.jumbotron {
+    background-color: none !important;
 }
 
 .bike {
@@ -65,6 +70,7 @@ body {
         color:#fff;
         letter-spacing: 5px;
         cursor: pointer;
+        line-height: 50px;
     }
     
 
@@ -266,4 +272,13 @@ footer {
         border:1px solid #2abd38;
         margin: 5px;
     }
+}
+
+.login {
+    margin-top: 80px;
+}
+
+.bikes-a {
+    margin-bottom: 100px;
+    margin-top: 20px;
 }

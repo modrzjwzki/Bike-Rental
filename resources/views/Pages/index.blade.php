@@ -2,9 +2,9 @@
 
 @section('content') 
 </div>
-<div class="image-index" style="background-image:url({{url('/assets/stock2.jpg')}});">
-    <h1>Najlepsza wypożyczalnia rowerów<br />
-    Jaką udało mi się napisać teraz chyba.</h1>
+<div class="image-index row justify-content-center" style="background-image:url({{url('/assets/stock2.jpg')}});">
+    <div  style="background-color:none;">Najlepsza wypożyczalnia rowerów<br />
+    Jaką udało mi się napisać teraz chyba.</div>
 </div>
 
 <div class="container-fluid " >

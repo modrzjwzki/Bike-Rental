@@ -10495,14 +10495,19 @@ body {
   margin-bottom: 80px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-y: -200px;
+  background-position-y: -50px;
 }
 
-.image-index h1 {
+.image-index div {
   color: #fff;
-  padding-top: 150px;
+  font-size: 30px;
   text-align: center;
-  padding-right: 100px;
+  background-color: none !important;
+  margin-top: 90px;
+}
+
+.jumbotron {
+  background-color: none !important;
 }
 
 .bike {
@@ -10533,6 +10538,7 @@ body {
   color: #fff;
   letter-spacing: 5px;
   cursor: pointer;
+  line-height: 50px;
 }
 
 .bike .bike-availability {
@@ -10745,9 +10751,22 @@ footer {
   margin: 5px;
 }
 
+.login {
+  margin-top: 80px;
+}
+
+.bikes-a {
+  margin-bottom: 100px;
+  margin-top: 20px;
+}
+
 .navbar-laravel {
   background-color: #fff;
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.jumbotron {
+  background-color: none !important;
 }
 

@@ -88,8 +88,10 @@ class adminController extends Controller
      */
     public function show($id)
     {
-        DB::table('bike')->where('id', $id)->delete();
-        return redirect('admin');
+        if (auth::user()->name == "admin") {
+            DB::table('bike')->where('id', $id)->delete();
+            return redirect('admin');
+        }
     }
 
     /**

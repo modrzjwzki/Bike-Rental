@@ -15,7 +15,6 @@ Route::resource('/', 'PagesController');
 
 Route::resource('admin', 'adminController');
 
-
 Route::get('bike/{id?}', 'BikeController@show');
 Route::get('admin/delete/{id?}', 'adminController@show');
 Route::get('admin/status/{id?}/{status?}', 'adminController@status');

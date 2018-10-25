@@ -1,5 +1,8 @@
 @extends('layout.layout')
 
+@section('title')
+Bike Rental - Admin Panel
+@endsection
 
 @section('content')
 
@@ -7,7 +10,11 @@
 
 @else
 
+
+
 <div class="admin-form">
+
+    
 <h1>Dodaj rower do katalogu</h1>
 {!! Form::open(['method' => 'POST', 'route' => ['admin.store'], 'autocomplete' =>
                             'off', 'enctype' => 'multipart/form-data', 'class' => 'form-group']) !!}
@@ -27,46 +34,85 @@
         </div>
         
         {{ Form::textarea('description', 'description') }}
-        <div style="clear:both"/>
+        <div style="clear:both"></div>
         {{Form::submit('dodaj do bazy danych',['class' => 'AddBikeToDB'])}}
         
     {!! Form::close() !!} 
     <br/>
 </div>
-    <h1>dostępne rowery</h1>
+    <h1>Dostępne rowery</h1>
+    <table class="table bikes-a">
+            <thead>
+                    <tr>
+                            <th scope="col">id</th>
+                            <th scope="col"></th>
+                            <th scope="col">Rower</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
     @foreach ($bikes as $bike)
-    <div>
-        
-    <a href="{{ url('bike/'.$bike->id.'')}}">{{$bike->name}}</a><a href="{{url('admin/delete/'.$bike->id.'')}}">Delte</a>
+    <tr>
+    <th scope="row">{{$bike->id}}</th>
+            <td><img src="{{ $bike->imageLink }}" width="100"></td>
+            <td><a href="{{ url('bike/'.$bike->id.'')}}">{{$bike->name}}</a></td>
+            <td><a href="{{url('admin/delete/'.$bike->id.'')}}"><i class="material-icons">delete</i></a></td>
+    </tr>
     
-
-    <br/>
     
-    </div>
     @endforeach
+</tbody>
+</table>
     <h1>Wypożyczone rowery</h1>
+    <table class="table">
+    <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Data dodania</th>
+                <th scope="col">Rower</th>
+                <th scope="col">Status</th>
+                <th scope="col">R</th>
+                <th scope="col">G</th>
+                <th scope="col">W</th>
+                <th scope="col">Z</th>
+            </tr>
+        </thead>
+        <tbody>
     @foreach ($rentedBikes as $rentedbike)
-       <div>
-           {{$rentedbike->created_at}}
-           {{$rentedbike->bikeName}} 
+       
+    <tr>
+    <th scope="row">{{$rentedbike->id}}</th>
+            <td>{{$rentedbike->created_at}}</td>
+                    <td>{{$rentedbike->bikeName}} </td>
            @if ($rentedbike->STATUS === 0)
-                Nie wiadomo
+           <td>Nie wiadomo</td>
              @elseif ($rentedbike->STATUS === 1)
-                Przekazano do realizacji
+             <td> Przekazano do realizacji</td>
              @elseif ($rentedbike->STATUS === 2)
-                Gotowy do odbioru
+             <td> Gotowy do odbioru</td>
              @elseif ($rentedbike->STATUS === 3)
-                Wypożyczony
+             <td>  Wypożyczony</td>
             @elseif ($rentedbike->STATUS === 4)
-             Zakończono
+            <td> Zakończono</td>
             @endif
-            <a href="{{url('admin/status/'.$rentedbike->id.'/1')}}">Przekazano do realizacji</a>
-            <a href="{{url('admin/status/'.$rentedbike->id.'/2')}}">Gotowy do odbioru</a>
-            <a href="{{url('admin/status/'.$rentedbike->id.'/3')}}">Wypożyczony</a>
-            <a href="{{url('admin/status/'.$rentedbike->id.'/4')}}">Zakończono</a>
-        </div>
+            <td> <a href="{{url('admin/status/'.$rentedbike->id.'/1')}}"><i class="material-icons">
+                    autorenew
+                    </i></a></td>
+                <td><a href="{{url('admin/status/'.$rentedbike->id.'/2')}}"><i class="material-icons">
+                        thumb_up
+                        </i></a></td>
+                    <td><a href="{{url('admin/status/'.$rentedbike->id.'/3')}}"><i class="material-icons">
+                            flight_takeoff
+                            </i></a></td>
+                        <td><a href="{{url('admin/status/'.$rentedbike->id.'/4')}}"><i class="material-icons">
+                                done
+                                </i></a></td>
+                            </tr>
+        
     @endforeach
-
+    </tbody>
+        </table>
+    </div><!-- continer close --> 
 @endguest
 
 @endsection

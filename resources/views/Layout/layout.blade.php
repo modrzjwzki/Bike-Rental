@@ -8,6 +8,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
     <script src="{{asset('js/jquery-1.8.3.min.js')}}"></script>
     <script src="{{asset('js/jquery.elevateZoom-3.0.8.min.js')}}"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
