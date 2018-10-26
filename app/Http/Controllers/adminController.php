@@ -21,7 +21,7 @@ class adminController extends Controller
             $bike = DB::table('bike')->get();
             $rentedBikes = DB::table('rented_bikes')->get();
             
-            return view('pages.adminPanel', 
+            return view('Pages.adminPanel', 
             ['bikes' => $bike,
             'rentedBikes' => $rentedBikes
             ]);
