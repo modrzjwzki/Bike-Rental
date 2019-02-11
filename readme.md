@@ -1,3 +1,5 @@
+#THIS CODE SUCKS ABOUT EVERYTHING SOO DON'T LOOK THERE.
+
 # Bike Rental
 
 First project build in Laravel for bikes rental.
@@ -16,4 +18,3 @@ First project build in Laravel for bikes rental.
  - I think It is not the ugliest bike rental system 
  
 You can Check it out here http://ramchca.nazwa.pl/public/
-
